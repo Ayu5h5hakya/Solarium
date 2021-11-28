@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class Mars extends StatelessWidget {
-  const Mars({Key? key}) : super(key: key);
+  final double? size;
+  const Mars({Key? key, this.size}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return UnconstrainedBox(
-      child: Container(
-        width: 110,
-        height: 110,
-        decoration:
-            BoxDecoration(shape: BoxShape.circle, color: Colors.yellow[100]),
-      ),
+    return Container(
+      width: size ?? 90,
+      height: size ?? 90,
+      decoration:
+          BoxDecoration(shape: BoxShape.circle, color: Colors.yellow[100]),
     );
   }
 }
