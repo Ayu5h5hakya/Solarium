@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class BodyDetail extends StatelessWidget {
-  const BodyDetail({Key? key}) : super(key: key);
+  final String path;
+  const BodyDetail({Key? key, required this.path}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
