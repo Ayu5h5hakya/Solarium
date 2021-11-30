@@ -1,9 +1,13 @@
 import 'package:solarium/body_surface_data.dart';
+import 'package:solarium/moons_grid.dart';
+import 'package:solarium/movie_location_pageview.dart';
 import 'package:solarium/repository/solar_repository.dart';
+import 'package:solarium/solar_events_pageview.dart';
 import 'package:solarium/sun.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'info_tile.dart';
 import 'models/solar_member.dart';
 
 class BodyDetail extends StatelessWidget {
@@ -32,7 +36,7 @@ class BodyDetail extends StatelessWidget {
                     children: [
                       Text(
                         _details.name.toUpperCase(),
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 40.0,
                           color: Colors.white,
                         ),
@@ -41,191 +45,31 @@ class BodyDetail extends StatelessWidget {
                         //SIZEDOVERFLOWBOX/CONSTRAINEDBOX
                         surfaceTemp: _details.tempInK,
                         radius: _details.radInKm,
-                        body: Sun(),
+                        body: const Sun(),
                       ),
-                      _InfoTile(
+                      const InfoTile(
                         //FITTEDBOX
                         label: 'MOONS',
-                        body: GridView.builder(
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 3,
-                                  crossAxisSpacing: 20,
-                                  mainAxisSpacing: 20),
-                          itemCount: 70,
-                          itemBuilder: (BuildContext ctx, index) {
-                            return Container(
-                              decoration: BoxDecoration(
-                                color: Colors.amber,
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                            );
-                          },
-                        ),
+                        body: MoonsGrid(),
                       ),
-                      _InfoTile(
+                      const InfoTile(
                         //COLUMN-LISTVIEW -> LIMITEDBOX -> EXPANDED
                         label: 'POP CULTURE',
-                        body: PageView(
-                          children: [
-                            Column(
-                              children: [
-                                FlutterLogo(),
-                                Expanded(
-                                  child: ListView(
-                                    children: [
-                                      Text(
-                                        'data',
-                                        style: TextStyle(fontSize: 40),
-                                      ),
-                                      Text(
-                                        'data',
-                                        style: TextStyle(fontSize: 40),
-                                      ),
-                                      Text(
-                                        'data',
-                                        style: TextStyle(fontSize: 40),
-                                      ),
-                                      Text(
-                                        'data',
-                                        style: TextStyle(fontSize: 40),
-                                      ),
-                                      Text(
-                                        'data',
-                                        style: TextStyle(fontSize: 40),
-                                      ),
-                                      Text(
-                                        'data',
-                                        style: TextStyle(fontSize: 40),
-                                      ),
-                                      Text(
-                                        'data',
-                                        style: TextStyle(fontSize: 40),
-                                      ),
-                                      Text(
-                                        'data',
-                                        style: TextStyle(fontSize: 40),
-                                      ),
-                                      Text(
-                                        'data',
-                                        style: TextStyle(fontSize: 40),
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
-                        ),
+                        body: MovieLocationPageView(),
                       ),
-                      _InfoTile(
+                      const InfoTile(
                         label: 'EVENTS',
-                        body: PageView(
-                          //FRACTIONALLYSIZEDBOX
-                          children: [
-                            Card(
-                              child: Column(
-                                children: [
-                                  FlutterLogo(),
-                                  Text(
-                                    'Title',
-                                    style: TextStyle(
-                                        fontSize: 40, color: Colors.black),
-                                  ),
-                                  Text(
-                                    'Tit saasdasdsas asdasd as asdas das dasd asdad asdasd asdasdasd adasdadasvsdvsdkvmsdl sffsdfsdfs fewafasd efasvsdklvndsv sldv;d  ekfnaslandsklaf llklasdfed-le',
-                                    style: TextStyle(color: Colors.black),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            UnconstrainedBox(
-                              child: LimitedBox(
-                                maxHeight:
-                                    MediaQuery.of(context).size.height / 2,
-                                maxWidth: MediaQuery.of(context).size.width,
-                                child: FractionallySizedBox(
-                                  widthFactor: 0.5,
-                                  child: Card(
-                                    child: Column(
-                                      children: [
-                                        FlutterLogo(),
-                                        Text(
-                                          'Title',
-                                          style: TextStyle(
-                                              fontSize: 40,
-                                              color: Colors.black),
-                                        ),
-                                        Text(
-                                          'Tit saasdasdsas asdasd as asdas das dasd asdad asdasd asdasdasd adasdadasvsdvsdkvmsdl sffsdfsdfs fewafasd efasvsdklvndsv sldv;d  ekfnaslandsklaf llklasdfed-le',
-                                          style: TextStyle(color: Colors.black),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            UnconstrainedBox(
-                              child: LimitedBox(
-                                maxHeight:
-                                    MediaQuery.of(context).size.height / 2,
-                                maxWidth: MediaQuery.of(context).size.width,
-                                child: FractionallySizedBox(
-                                  widthFactor: 0.5,
-                                  child: Container(
-                                    color: Colors.green,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                        body: SolarEventsPageView(),
                       ),
                     ],
                   );
                 }
               }
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             }),
       ),
-    );
-  }
-}
-
-class _InfoTile extends StatelessWidget {
-  final String label;
-  final Widget body;
-  const _InfoTile({
-    Key? key,
-    required this.label,
-    required this.body,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.grey[800], borderRadius: BorderRadius.circular(10.0)),
-        alignment: Alignment.center,
-        padding: const EdgeInsets.all(20.0),
-        margin: const EdgeInsets.all(10.0),
-        child: Text(
-          label.toUpperCase(),
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-      ),
-      onTap: () {
-        showModalBottomSheet<void>(
-          context: context,
-          builder: (_) => body,
-        );
-      },
     );
   }
 }
