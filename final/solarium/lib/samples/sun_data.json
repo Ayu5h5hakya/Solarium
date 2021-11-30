@@ -1,0 +1,54 @@
+{
+    "name": "Sun",
+    "tempinK": 5778,
+    "radiusinKm": 696340,
+    "moons": [],
+    "popculture": [
+        {
+            "name": "Solar Crisis",
+            "year": 0,
+            "genre": "",
+            "synopsis": ""
+        },
+        {
+            "name": "Sunshine",
+            "year": 0,
+            "genre": "",
+            "synopsis": ""
+        },
+        {
+            "name": "The Impossible Voyage",
+            "year": 0,
+            "genre": "",
+            "synopsis": ""
+        }
+    ],
+    "event": [
+        {
+            "launchDate": "Aug 12, 2018",
+            "name": "Parker Solar Probe",
+            "description": ""
+        },
+        {
+            "launchDate": "Dec 2, 1995",
+            "name": "Soho",
+            "description": ""
+        },
+        {
+            "launchDate": "Oct 6, 1990",
+            "name": "Ulysses",
+            "description": ""
+        }
+    ],
+    "random": [
+        {
+            "fact": "dfgbdzfbvszfdbdfbzdf"
+        },
+        {
+            "fact": "dfbdzxfbdfbdfbzdfbzdfbzdfrgbazdfbzdfbzdfbzdfbdzgergbzdfbdzfgbAZDESRFgb"
+        },
+        {
+            "fact": "dfbdzxfbdfbdfbzdfbzdfbzdfrgbazdfbzdfbzdfbzdfbdzgergbzdfbdzfgbAZDESRFgb"
+        }
+    ]
+}
