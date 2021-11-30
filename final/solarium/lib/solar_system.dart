@@ -11,6 +11,7 @@ import 'package:solarium/planets/uranus.dart';
 import 'package:solarium/planets/venus.dart';
 import 'package:solarium/sun.dart';
 import 'package:solarium/utils.dart';
+import 'package:solarium/widgets/astro_page_indicator.dart';
 
 class SolarSystem extends StatefulWidget {
   const SolarSystem({Key? key}) : super(key: key);
@@ -20,62 +21,87 @@ class SolarSystem extends StatefulWidget {
 }
 
 class _SolarSystemState extends State<SolarSystem> {
+  int _currentPlanet = 2;
+  final PageController _controller = PageController(initialPage: 2);
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return PageView(
-      scrollDirection: Axis.vertical,
+    return Stack(
       children: [
-        _ProportionedBody(
-          path: sun_details,
-          body: Sun(
-            size: 250,
+        PageView(
+          controller: _controller,
+          scrollDirection: Axis.vertical,
+          children: [
+            _ProportionedBody(
+              path: sun_details,
+              body: Sun(
+                size: 250,
+              ),
+            ),
+            _ProportionedBody(
+                body: Mercury(
+                  size: 100,
+                ),
+                path: mercury_details),
+            _ProportionedBody(
+                body: Venus(
+                  size: 100,
+                ),
+                path: venus_details),
+            _ProportionedBody(
+                body: Earth(
+                  size: 120,
+                ),
+                path: earth_details),
+            _ProportionedBody(
+                body: Mars(
+                  size: 110,
+                ),
+                path: mars_details),
+            _ProportionedBody(
+                body: Jupiter(
+                  size: 180,
+                ),
+                path: jupiter_details),
+            _ProportionedBody(
+                body: Saturn(
+                  size: 170,
+                ),
+                path: saturn_details),
+            _ProportionedBody(
+                body: Neptune(
+                  size: 150,
+                ),
+                path: neptune_details),
+            _ProportionedBody(
+                body: Uranus(
+                  size: 150,
+                ),
+                path: uranus_details),
+            _ProportionedBody(
+                body: Pluto(
+                  size: 90,
+                ),
+                path: pluto_details),
+          ],
+        ),
+        Align(
+          alignment: Alignment.centerRight,
+          child: AstroPageIndicator(
+            currentPlanet: _currentPlanet,
+            onPageChanged: (planet) {
+              _controller.animateToPage(planet,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeIn);
+            },
           ),
         ),
-        _ProportionedBody(
-            body: Mercury(
-              size: 100,
-            ),
-            path: mercury_details),
-        _ProportionedBody(
-            body: Venus(
-              size: 100,
-            ),
-            path: venus_details),
-        _ProportionedBody(
-            body: Earth(
-              size: 120,
-            ),
-            path: earth_details),
-        _ProportionedBody(
-            body: Mars(
-              size: 110,
-            ),
-            path: mars_details),
-        _ProportionedBody(
-            body: Jupiter(
-              size: 180,
-            ),
-            path: jupiter_details),
-        _ProportionedBody(
-            body: Saturn(
-              size: 170,
-            ),
-            path: saturn_details),
-        _ProportionedBody(
-            body: Neptune(
-              size: 150,
-            ),
-            path: neptune_details),
-        _ProportionedBody(
-            body: Uranus(
-              size: 150,
-            ),
-            path: uranus_details),
-        _ProportionedBody(
-            body: Pluto(
-              size: 90,
-            ),
-            path: pluto_details),
       ],
     );
   }
