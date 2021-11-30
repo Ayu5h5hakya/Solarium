@@ -20,70 +20,98 @@ class BodyDetail extends StatelessWidget {
             ),
           ),
           _BodyRadiusTemp(
+            //SIZEDOVERFLOWBOX/CONSTRAINEDBOX
             body: Sun(),
           ),
           _InfoTile(
+            //FITTEDBOX
             label: 'MOONS',
             body: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20),
-                itemCount: 70,
-                itemBuilder: (BuildContext ctx, index) {
-                  return Container(
-                    decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(15)),
-                  );
-                }),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3, crossAxisSpacing: 20, mainAxisSpacing: 20),
+              itemCount: 70,
+              itemBuilder: (BuildContext ctx, index) {
+                return Container(
+                  decoration: BoxDecoration(
+                    color: Colors.amber,
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                );
+              },
+            ),
           ),
-          _InfoTile(label: 'POP CULTURE', body: Container()),
           _InfoTile(
-              label: 'EVENTS',
-              body: PageView(
-                children: [
-                  Container(
-                    color: Colors.green,
-                  ),
-                  Container(
-                    color: Colors.red,
-                  ),
-                  Container(
-                    color: Colors.blue,
-                  )
-                ],
-              )),
+            //COLUMN-LISTVIEW -> LIMITEDBOX -> EXPANDED
+            label: 'POP CULTURE',
+            body: PageView(
+              children: [
+                Column(
+                  children: [
+                    FlutterLogo(),
+                    Expanded(
+                      child: ListView(
+                        children: [
+                          Text(
+                            'data',
+                            style: TextStyle(fontSize: 40),
+                          ),
+                          Text(
+                            'data',
+                            style: TextStyle(fontSize: 40),
+                          ),
+                          Text(
+                            'data',
+                            style: TextStyle(fontSize: 40),
+                          ),
+                          Text(
+                            'data',
+                            style: TextStyle(fontSize: 40),
+                          ),
+                          Text(
+                            'data',
+                            style: TextStyle(fontSize: 40),
+                          ),
+                          Text(
+                            'data',
+                            style: TextStyle(fontSize: 40),
+                          ),
+                          Text(
+                            'data',
+                            style: TextStyle(fontSize: 40),
+                          ),
+                          Text(
+                            'data',
+                            style: TextStyle(fontSize: 40),
+                          ),
+                          Text(
+                            'data',
+                            style: TextStyle(fontSize: 40),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
           _InfoTile(
-              label: 'RANDOM',
-              body: ListView(
-                children: [
-                  LimitedBox(
-                    maxHeight: 100,
-                    child: Container(
-                      color: Colors.green,
-                    ),
-                  ),
-                  LimitedBox(
-                    maxHeight: 100,
-                    child: Container(
-                      color: Colors.blue,
-                    ),
-                  ),
-                  LimitedBox(
-                    maxHeight: 100,
-                    child: Container(
-                      color: Colors.amber,
-                    ),
-                  ),
-                  LimitedBox(
-                    maxHeight: 100,
-                    child: Container(
-                      color: Colors.green,
-                    ),
-                  )
-                ],
-              )),
+            label: 'EVENTS',
+            body: PageView(
+              //FRACTIONALLYSIZEDBOX
+              children: [
+                Container(
+                  color: Colors.green,
+                ),
+                Container(
+                  color: Colors.red,
+                ),
+                Container(
+                  color: Colors.blue,
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -106,13 +134,18 @@ class _BodyRadiusTemp extends StatelessWidget {
       color: Colors.grey[800],
       child: Row(
         children: [
-          Expanded(child: _BodyTemp()),
-          Baseline(
-            baseline: 15.0,
-            baselineType: TextBaseline.alphabetic,
-            child: body,
+          Container(
+            color: Colors.red,
+            width: 40,
           ),
-          Expanded(child: _BodyTemp()),
+          Container(
+            color: Colors.green,
+            width: 40,
+          ),
+          Container(
+            color: Colors.red,
+            width: 40,
+          ),
         ],
       ),
     );
