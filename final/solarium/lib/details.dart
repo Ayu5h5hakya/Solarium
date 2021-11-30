@@ -1,13 +1,13 @@
-import 'package:solarium/body_surface_data.dart';
-import 'package:solarium/moons_grid.dart';
-import 'package:solarium/movie_location_pageview.dart';
+import 'package:solarium/widgets/body_surface_data.dart';
+import 'package:solarium/widgets/moons_grid.dart';
+import 'package:solarium/widgets/movie_location_pageview.dart';
 import 'package:solarium/repository/solar_repository.dart';
-import 'package:solarium/solar_events_pageview.dart';
+import 'package:solarium/widgets/solar_events_pageview.dart';
 import 'package:solarium/sun.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'info_tile.dart';
+import 'widgets/info_tile.dart';
 import 'models/solar_member.dart';
 
 class BodyDetail extends StatelessWidget {
