@@ -12,10 +12,18 @@ class Solarium extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: ThemeData.dark(),
+      home: const Scaffold(
+        body: DecoratedBox(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage("images/background.jpg"),
+            ),
+          ),
+          child: SolarSystem(),
+        ),
       ),
-      home: const SolarSystem(),
     );
   }
 }
