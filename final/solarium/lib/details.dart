@@ -1,120 +1,178 @@
+import 'package:solarium/repository/solar_repository.dart';
 import 'package:solarium/sun.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class BodyDetail extends StatelessWidget {
   final String path;
-  const BodyDetail({Key? key, required this.path}) : super(key: key);
+  BodyDetail({Key? key, required this.path}) : super(key: key);
+  final SolarRepository _solarRepository = SolarRepository();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       backgroundColor: Colors.black12,
-      body: Column(
-        children: [
-          Text(
-            'SUN',
-            style: TextStyle(
-              fontSize: 40.0,
-              color: Colors.white,
-            ),
-          ),
-          _BodyRadiusTemp(
-            //SIZEDOVERFLOWBOX/CONSTRAINEDBOX
-            body: Sun(),
-          ),
-          _InfoTile(
-            //FITTEDBOX
-            label: 'MOONS',
-            body: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3, crossAxisSpacing: 20, mainAxisSpacing: 20),
-              itemCount: 70,
-              itemBuilder: (BuildContext ctx, index) {
-                return Container(
-                  decoration: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.circular(15),
+      body: FutureBuilder(
+          future: _solarRepository.getInfoForMember(path),
+          builder: (_, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              return Column(
+                children: [
+                  Text(
+                    'SUN',
+                    style: TextStyle(
+                      fontSize: 40.0,
+                      color: Colors.white,
+                    ),
                   ),
-                );
-              },
-            ),
-          ),
-          _InfoTile(
-            //COLUMN-LISTVIEW -> LIMITEDBOX -> EXPANDED
-            label: 'POP CULTURE',
-            body: PageView(
-              children: [
-                Column(
-                  children: [
-                    FlutterLogo(),
-                    Expanded(
-                      child: ListView(
-                        children: [
-                          Text(
-                            'data',
-                            style: TextStyle(fontSize: 40),
+                  _BodyRadiusTemp(
+                    //SIZEDOVERFLOWBOX/CONSTRAINEDBOX
+                    body: Sun(),
+                  ),
+                  _InfoTile(
+                    //FITTEDBOX
+                    label: 'MOONS',
+                    body: GridView.builder(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 3,
+                              crossAxisSpacing: 20,
+                              mainAxisSpacing: 20),
+                      itemCount: 70,
+                      itemBuilder: (BuildContext ctx, index) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            color: Colors.amber,
+                            borderRadius: BorderRadius.circular(15),
                           ),
-                          Text(
-                            'data',
-                            style: TextStyle(fontSize: 40),
+                        );
+                      },
+                    ),
+                  ),
+                  _InfoTile(
+                    //COLUMN-LISTVIEW -> LIMITEDBOX -> EXPANDED
+                    label: 'POP CULTURE',
+                    body: PageView(
+                      children: [
+                        Column(
+                          children: [
+                            FlutterLogo(),
+                            Expanded(
+                              child: ListView(
+                                children: [
+                                  Text(
+                                    'data',
+                                    style: TextStyle(fontSize: 40),
+                                  ),
+                                  Text(
+                                    'data',
+                                    style: TextStyle(fontSize: 40),
+                                  ),
+                                  Text(
+                                    'data',
+                                    style: TextStyle(fontSize: 40),
+                                  ),
+                                  Text(
+                                    'data',
+                                    style: TextStyle(fontSize: 40),
+                                  ),
+                                  Text(
+                                    'data',
+                                    style: TextStyle(fontSize: 40),
+                                  ),
+                                  Text(
+                                    'data',
+                                    style: TextStyle(fontSize: 40),
+                                  ),
+                                  Text(
+                                    'data',
+                                    style: TextStyle(fontSize: 40),
+                                  ),
+                                  Text(
+                                    'data',
+                                    style: TextStyle(fontSize: 40),
+                                  ),
+                                  Text(
+                                    'data',
+                                    style: TextStyle(fontSize: 40),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                  _InfoTile(
+                    label: 'EVENTS',
+                    body: PageView(
+                      //FRACTIONALLYSIZEDBOX
+                      children: [
+                        Card(
+                          child: Column(
+                            children: [
+                              FlutterLogo(),
+                              Text(
+                                'Title',
+                                style: TextStyle(
+                                    fontSize: 40, color: Colors.black),
+                              ),
+                              Text(
+                                'Tit saasdasdsas asdasd as asdas das dasd asdad asdasd asdasdasd adasdadasvsdvsdkvmsdl sffsdfsdfs fewafasd efasvsdklvndsv sldv;d  ekfnaslandsklaf llklasdfed-le',
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ],
                           ),
-                          Text(
-                            'data',
-                            style: TextStyle(fontSize: 40),
+                        ),
+                        UnconstrainedBox(
+                          child: LimitedBox(
+                            maxHeight: MediaQuery.of(context).size.height / 2,
+                            maxWidth: MediaQuery.of(context).size.width,
+                            child: FractionallySizedBox(
+                              widthFactor: 0.5,
+                              child: Card(
+                                child: Column(
+                                  children: [
+                                    FlutterLogo(),
+                                    Text(
+                                      'Title',
+                                      style: TextStyle(
+                                          fontSize: 40, color: Colors.black),
+                                    ),
+                                    Text(
+                                      'Tit saasdasdsas asdasd as asdas das dasd asdad asdasd asdasdasd adasdadasvsdvsdkvmsdl sffsdfsdfs fewafasd efasvsdklvndsv sldv;d  ekfnaslandsklaf llklasdfed-le',
+                                      style: TextStyle(color: Colors.black),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                           ),
-                          Text(
-                            'data',
-                            style: TextStyle(fontSize: 40),
+                        ),
+                        UnconstrainedBox(
+                          child: LimitedBox(
+                            maxHeight: MediaQuery.of(context).size.height / 2,
+                            maxWidth: MediaQuery.of(context).size.width,
+                            child: FractionallySizedBox(
+                              widthFactor: 0.5,
+                              child: Container(
+                                color: Colors.green,
+                              ),
+                            ),
                           ),
-                          Text(
-                            'data',
-                            style: TextStyle(fontSize: 40),
-                          ),
-                          Text(
-                            'data',
-                            style: TextStyle(fontSize: 40),
-                          ),
-                          Text(
-                            'data',
-                            style: TextStyle(fontSize: 40),
-                          ),
-                          Text(
-                            'data',
-                            style: TextStyle(fontSize: 40),
-                          ),
-                          Text(
-                            'data',
-                            style: TextStyle(fontSize: 40),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                )
-              ],
-            ),
-          ),
-          _InfoTile(
-            label: 'EVENTS',
-            body: PageView(
-              //FRACTIONALLYSIZEDBOX
-              children: [
-                Container(
-                  color: Colors.green,
-                ),
-                Container(
-                  color: Colors.red,
-                ),
-                Container(
-                  color: Colors.blue,
-                )
-              ],
-            ),
-          ),
-        ],
-      ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              );
+            }
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }),
     );
   }
 }
@@ -146,6 +204,7 @@ class _BodyRadiusTemp extends StatelessWidget {
               ),
             ),
           ),
+          Expanded(child: _BodyTemp()),
         ],
       ),
     );
