@@ -1,3 +1,4 @@
+import 'package:solarium/body_surface_data.dart';
 import 'package:solarium/repository/solar_repository.dart';
 import 'package:solarium/sun.dart';
 import 'package:flutter/material.dart';
@@ -36,8 +37,10 @@ class BodyDetail extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      _BodyRadiusTemp(
+                      BodySurfaceData(
                         //SIZEDOVERFLOWBOX/CONSTRAINEDBOX
+                        surfaceTemp: _details.tempInK,
+                        radius: _details.radInKm,
                         body: Sun(),
                       ),
                       _InfoTile(
@@ -188,66 +191,6 @@ class BodyDetail extends StatelessWidget {
               );
             }),
       ),
-    );
-  }
-}
-
-class _BodyRadiusTemp extends StatelessWidget {
-  final Widget body;
-  const _BodyRadiusTemp({Key? key, required this.body}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin:
-          const EdgeInsets.only(top: 80.0, left: 20.0, right: 20.0, bottom: 20),
-      constraints: BoxConstraints(maxHeight: 50, maxWidth: 300),
-      decoration: BoxDecoration(
-        color: Colors.grey[800],
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: Row(
-        children: [
-          Expanded(child: _BodyTemp()),
-          Expanded(
-            child: OverflowBox(
-              maxHeight: 90,
-              child: SizedBox(
-                width: 90,
-                height: 90,
-                child: body,
-              ),
-            ),
-          ),
-          Expanded(child: _BodyTemp()),
-        ],
-      ),
-    );
-  }
-}
-
-class _BodyTemp extends StatefulWidget {
-  const _BodyTemp({Key? key}) : super(key: key);
-
-  @override
-  __BodyTempState createState() => __BodyTempState();
-}
-
-class __BodyTempState extends State<_BodyTemp> {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          'TEMP',
-          style: TextStyle(fontSize: 18.0, color: Colors.white),
-        ),
-        Text(
-          '5200K',
-          style: TextStyle(color: Colors.white),
-        ),
-      ],
     );
   }
 }
