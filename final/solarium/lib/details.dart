@@ -41,50 +41,21 @@ class BodyDetail extends StatelessWidget {
           ),
           _InfoTile(label: 'POP CULTURE', body: Container()),
           _InfoTile(
-              label: 'EVENTS',
-              body: PageView(
-                children: [
-                  Container(
-                    color: Colors.green,
-                  ),
-                  Container(
-                    color: Colors.red,
-                  ),
-                  Container(
-                    color: Colors.blue,
-                  )
-                ],
-              )),
-          _InfoTile(
-              label: 'RANDOM',
-              body: ListView(
-                children: [
-                  LimitedBox(
-                    maxHeight: 100,
-                    child: Container(
-                      color: Colors.green,
-                    ),
-                  ),
-                  LimitedBox(
-                    maxHeight: 100,
-                    child: Container(
-                      color: Colors.blue,
-                    ),
-                  ),
-                  LimitedBox(
-                    maxHeight: 100,
-                    child: Container(
-                      color: Colors.amber,
-                    ),
-                  ),
-                  LimitedBox(
-                    maxHeight: 100,
-                    child: Container(
-                      color: Colors.green,
-                    ),
-                  )
-                ],
-              )),
+            label: 'EVENTS',
+            body: PageView(
+              children: [
+                Container(
+                  color: Colors.green,
+                ),
+                Container(
+                  color: Colors.red,
+                ),
+                Container(
+                  color: Colors.blue,
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -98,20 +69,25 @@ class _BodyRadiusTemp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(
-        top: 80.0,
-        left: 20.0,
-        right: 20.0,
+      margin:
+          const EdgeInsets.only(top: 80.0, left: 20.0, right: 20.0, bottom: 20),
+      constraints: BoxConstraints(maxHeight: 50, maxWidth: 300),
+      decoration: BoxDecoration(
+        color: Colors.grey[800],
+        borderRadius: BorderRadius.circular(10.0),
       ),
-      padding: const EdgeInsets.all(10.0),
-      color: Colors.grey[800],
       child: Row(
         children: [
           Expanded(child: _BodyTemp()),
-          Baseline(
-            baseline: 15.0,
-            baselineType: TextBaseline.alphabetic,
-            child: body,
+          Expanded(
+            child: OverflowBox(
+              maxHeight: 90,
+              child: SizedBox(
+                width: 90,
+                height: 90,
+                child: body,
+              ),
+            ),
           ),
           Expanded(child: _BodyTemp()),
         ],
@@ -131,6 +107,7 @@ class __BodyTempState extends State<_BodyTemp> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           'TEMP',
@@ -158,10 +135,11 @@ class _InfoTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
-        color: Colors.grey[800],
+        decoration: BoxDecoration(
+            color: Colors.grey[800], borderRadius: BorderRadius.circular(10.0)),
         alignment: Alignment.center,
         padding: const EdgeInsets.all(20.0),
-        margin: const EdgeInsets.only(top: 10.0),
+        margin: const EdgeInsets.all(10.0),
         child: Text(
           label.toUpperCase(),
           style: TextStyle(
