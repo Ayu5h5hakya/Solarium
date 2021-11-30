@@ -7,7 +7,9 @@ extension Explorer on BuildContext {
     Navigator.push(
       this,
       MaterialPageRoute<void>(
-        builder: (context) => const BodyDetail(),
+        builder: (context) => BodyDetail(
+          path: planet,
+        ),
       ),
     );
   }
