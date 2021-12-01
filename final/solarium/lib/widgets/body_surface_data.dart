@@ -1,16 +1,44 @@
+// Copyright (c) 2021 Razeware LLC
+
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+
+// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+// distribute, sublicense, create a derivative work, and/or sell copies of the
+// Software in any work that is designed, intended, or marketed for pedagogical
+// or instructional purposes related to programming, coding, application
+// development or information technology.  Permission for such use, copying,
+// modification, merger, publication, distribution, sublicensing, creation of
+// derivative works, or sale is expressly withheld.
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:solarium/constants.dart';
-import 'package:solarium/planets/earth.dart';
-import 'package:solarium/planets/jupiter.dart';
-import 'package:solarium/planets/mars.dart';
-import 'package:solarium/planets/mercury.dart';
-import 'package:solarium/planets/neptune.dart';
-import 'package:solarium/planets/pluto.dart';
-import 'package:solarium/planets/saturn.dart';
-import 'package:solarium/planets/uranus.dart';
-import 'package:solarium/planets/venus.dart';
-import 'package:solarium/sun.dart';
+import '../constants.dart';
+import '../planets/earth.dart';
+import '../planets/jupiter.dart';
+import '../planets/mars.dart';
+import '../planets/mercury.dart';
+import '../planets/neptune.dart';
+import '../planets/pluto.dart';
+import '../planets/saturn.dart';
+import '../planets/uranus.dart';
+import '../planets/venus.dart';
+import '../sun.dart';
 
 class BodySurfaceData extends StatelessWidget {
   final String body;
@@ -40,7 +68,7 @@ class BodySurfaceData extends StatelessWidget {
     return Container(
       margin:
           const EdgeInsets.only(top: 80.0, left: 20.0, right: 20.0, bottom: 20),
-      constraints: BoxConstraints(maxHeight: 50, maxWidth: 300),
+      constraints: const BoxConstraints(maxHeight: 50, maxWidth: 300),
       decoration: BoxDecoration(
         color: Colors.grey[800],
         borderRadius: BorderRadius.circular(10.0),
@@ -51,7 +79,7 @@ class BodySurfaceData extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(left: 10.0),
               child: _SurfaceData(
-                label: "TEMP",
+                label: 'TEMP',
                 value: surfaceTemp,
                 alignment: CrossAxisAlignment.start,
               ),
@@ -71,7 +99,7 @@ class BodySurfaceData extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(right: 10.0),
               child: _SurfaceData(
-                label: "RADIUS",
+                label: 'RADIUS',
                 value: radius,
                 alignment: CrossAxisAlignment.end,
               ),
@@ -102,11 +130,11 @@ class _SurfaceData extends StatelessWidget {
       children: [
         Text(
           label,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
         Text(
-          "$value",
-          style: TextStyle(fontSize: 18.0, color: Colors.white),
+          '$value',
+          style: const TextStyle(fontSize: 18.0, color: Colors.white),
         ),
       ],
     );
