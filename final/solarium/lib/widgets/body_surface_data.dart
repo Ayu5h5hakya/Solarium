@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:solarium/constants.dart';
+import 'package:solarium/planets/earth.dart';
+import 'package:solarium/planets/jupiter.dart';
+import 'package:solarium/planets/mars.dart';
+import 'package:solarium/planets/mercury.dart';
+import 'package:solarium/planets/neptune.dart';
+import 'package:solarium/planets/pluto.dart';
+import 'package:solarium/planets/saturn.dart';
+import 'package:solarium/planets/uranus.dart';
+import 'package:solarium/planets/venus.dart';
+import 'package:solarium/sun.dart';
 
 class BodySurfaceData extends StatelessWidget {
-  final Widget body;
+  final String body;
   final int surfaceTemp;
   final int radius;
   const BodySurfaceData({
@@ -14,6 +25,18 @@ class BodySurfaceData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget _body = const SizedBox();
+    if (body == sun_details) _body = const Sun();
+    if (body == mercury_details) _body = const Mercury();
+    if (body == venus_details) _body = const Venus();
+    if (body == earth_details) _body = const Earth();
+    if (body == mars_details) _body = const Mars();
+    if (body == jupiter_details) _body = const Jupiter();
+    if (body == saturn_details) _body = const Saturn();
+    if (body == neptune_details) _body = const Neptune();
+    if (body == uranus_details) _body = const Uranus();
+    if (body == pluto_details) _body = const Pluto();
+
     return Container(
       margin:
           const EdgeInsets.only(top: 80.0, left: 20.0, right: 20.0, bottom: 20),
@@ -40,7 +63,7 @@ class BodySurfaceData extends StatelessWidget {
               child: SizedBox(
                 width: 90,
                 height: 90,
-                child: body,
+                child: _body,
               ),
             ),
           ),
