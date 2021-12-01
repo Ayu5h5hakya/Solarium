@@ -10,8 +10,11 @@ class Earth extends StatelessWidget {
     return Container(
       width: size ?? 90,
       height: size ?? 90,
-      decoration:
-          BoxDecoration(shape: BoxShape.circle, color: Colors.yellow[100]),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('images/earth.png'),
+        ),
+      ),
     );
   }
 }
