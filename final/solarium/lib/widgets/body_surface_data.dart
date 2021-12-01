@@ -79,7 +79,7 @@ class BodySurfaceData extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(left: 10.0),
               child: _SurfaceData(
-                label: 'TEMP',
+                label: 'TEMP(K)',
                 value: surfaceTemp,
                 alignment: CrossAxisAlignment.start,
               ),
@@ -99,7 +99,7 @@ class BodySurfaceData extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(right: 10.0),
               child: _SurfaceData(
-                label: 'RADIUS',
+                label: 'RADIUS(km)',
                 value: radius,
                 alignment: CrossAxisAlignment.end,
               ),
