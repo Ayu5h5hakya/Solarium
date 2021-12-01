@@ -12,31 +12,31 @@ class SolarRemoteSrc {
         _response = await rootBundle.loadString('samples/sun_data.json');
         break;
       case mercury_details:
-        _response = await rootBundle.loadString('samples/sun_data.json');
+        _response = await rootBundle.loadString('samples/mercury_data.json');
         break;
       case venus_details:
-        _response = await rootBundle.loadString('samples/sun_data.json');
+        _response = await rootBundle.loadString('samples/venus_data.json');
         break;
       case earth_details:
-        _response = await rootBundle.loadString('samples/sun_data.json');
+        _response = await rootBundle.loadString('samples/earth_data.json');
         break;
       case mars_details:
-        _response = await rootBundle.loadString('samples/sun_data.json');
+        _response = await rootBundle.loadString('samples/mars_data.json');
         break;
       case jupiter_details:
-        _response = await rootBundle.loadString('samples/sun_data.json');
+        _response = await rootBundle.loadString('samples/jupiter_data.json');
         break;
       case saturn_details:
-        _response = await rootBundle.loadString('samples/sun_data.json');
+        _response = await rootBundle.loadString('samples/saturn_data.json');
         break;
       case neptune_details:
-        _response = await rootBundle.loadString('samples/sun_data.json');
+        _response = await rootBundle.loadString('samples/neptune_data.json');
         break;
       case uranus_details:
-        _response = await rootBundle.loadString('samples/sun_data.json');
+        _response = await rootBundle.loadString('samples/uranus_data.json');
         break;
       case pluto_details:
-        _response = await rootBundle.loadString('samples/sun_data.json');
+        _response = await rootBundle.loadString('samples/pluto_data.json');
         break;
       default:
         _response = "";

@@ -13,9 +13,8 @@ class MoonsGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     if (data.isEmpty) {
       return Container(
-        width: 100,
-        height: 200,
-        color: Colors.green,
+        alignment: Alignment.center,
+        child: Text('It seems Mercury does not have any moons that I know of.'),
       );
     }
     return GridView.builder(
