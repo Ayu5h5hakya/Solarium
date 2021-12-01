@@ -1,66 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:solarium/models/event.dart';
 
 class SolarEventsPageView extends StatelessWidget {
-  const SolarEventsPageView({Key? key}) : super(key: key);
+  final List<Event> data;
+  const SolarEventsPageView({Key? key, required this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return PageView(
-      //FRACTIONALLYSIZEDBOX
-      children: [
-        Card(
-          child: Column(
-            children: [
-              FlutterLogo(),
-              Text(
-                'Title',
-                style: TextStyle(fontSize: 40, color: Colors.black),
-              ),
-              Text(
-                'Tit saasdasdsas asdasd as asdas das dasd asdad asdasd asdasdasd adasdadasvsdvsdkvmsdl sffsdfsdfs fewafasd efasvsdklvndsv sldv;d  ekfnaslandsklaf llklasdfed-le',
-                style: TextStyle(color: Colors.black),
-              ),
-            ],
-          ),
-        ),
-        UnconstrainedBox(
+    return PageView.builder(
+      itemBuilder: (_, index) {
+        final _item = data[index];
+        return UnconstrainedBox(
           child: LimitedBox(
             maxHeight: MediaQuery.of(context).size.height / 2,
             maxWidth: MediaQuery.of(context).size.width,
             child: FractionallySizedBox(
-              widthFactor: 0.5,
+              widthFactor: 0.75,
               child: Card(
-                child: Column(
-                  children: [
-                    FlutterLogo(),
-                    Text(
-                      'Title',
-                      style: TextStyle(fontSize: 40, color: Colors.black),
-                    ),
-                    Text(
-                      'Tit saasdasdsas asdasd as asdas das dasd asdad asdasd asdasdasd adasdadasvsdvsdkvmsdl sffsdfsdfs fewafasd efasvsdklvndsv sldv;d  ekfnaslandsklaf llklasdfed-le',
-                      style: TextStyle(color: Colors.black),
-                    ),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                        _item.launchDate,
+                        style: TextStyle(fontSize: 20, color: Colors.black),
+                      ),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                        _item.name,
+                        style: TextStyle(fontSize: 40, color: Colors.black),
+                      ),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                        _item.description,
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
-        ),
-        UnconstrainedBox(
-          child: LimitedBox(
-            maxHeight: MediaQuery.of(context).size.height / 2,
-            maxWidth: MediaQuery.of(context).size.width,
-            child: FractionallySizedBox(
-              widthFactor: 0.5,
-              child: Container(
-                color: Colors.green,
-              ),
-            ),
-          ),
-        ),
-      ],
+        );
+      },
+      itemCount: data.length,
     );
   }
 }

@@ -63,11 +63,11 @@ class BodyDetail extends StatelessWidget {
                           data: _details.mediaPresence,
                         ),
                       ),
-                      const InfoTile(
+                      InfoTile(
                         label: 'EVENTS',
                         body: SolarEventsPageView(
-                            //data: _details.events,
-                            ),
+                          data: _details.events,
+                        ),
                       ),
                     ],
                   );
