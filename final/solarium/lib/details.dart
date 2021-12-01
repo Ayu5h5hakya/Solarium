@@ -45,7 +45,7 @@ class BodyDetail extends StatelessWidget {
                         //SIZEDOVERFLOWBOX/CONSTRAINEDBOX
                         surfaceTemp: _details.tempInK,
                         radius: _details.radInKm,
-                        body: const Sun(),
+                        body: path,
                       ),
                       const InfoTile(
                         //FITTEDBOX
