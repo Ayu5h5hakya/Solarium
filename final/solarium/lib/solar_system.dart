@@ -71,7 +71,7 @@ class _SolarSystemState extends State<SolarSystem> {
                 path: jupiter_details),
             _ProportionedBody(
                 body: Saturn(
-                  size: 170,
+                  size: 210,
                 ),
                 path: saturn_details),
             _ProportionedBody(
