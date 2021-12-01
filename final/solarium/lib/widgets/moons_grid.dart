@@ -14,24 +14,39 @@ class MoonsGrid extends StatelessWidget {
     if (data.isEmpty) {
       return Container(
         alignment: Alignment.center,
-        child: Text('It seems Mercury does not have any moons that I know of.'),
+        child: Text('This planet does not have any moons orbiting it.'),
       );
     }
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3, crossAxisSpacing: 20, mainAxisSpacing: 20),
-      itemCount: data.length,
-      itemBuilder: (BuildContext ctx, index) {
-        return Container(
-          decoration: BoxDecoration(
-            color: Colors.amber,
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: FittedBox(
-            child: Text('sefefeddsfsadasdasd'),
-          ),
-        );
-      },
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount:
+                MediaQuery.of(context).orientation == Orientation.portrait
+                    ? 3
+                    : 6,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20),
+        itemCount: data.length,
+        itemBuilder: (BuildContext ctx, index) {
+          final _item = data[index];
+          return Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(image: NetworkImage(_item.imageUrl)),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: FittedBox(
+              child: Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Text(
+                  _item.name,
+                  style: TextStyle(fontSize: 14.0, color: Colors.white),
+                ),
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }

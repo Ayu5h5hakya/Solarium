@@ -20,7 +20,7 @@ class SolarEventsPageView extends StatelessWidget {
               child: Card(
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Column(
+                  child: ListView(
                     children: [
                       const SizedBox(
                         height: 10.0,

@@ -20,11 +20,10 @@ class AstroPageIndicator extends StatelessWidget {
             margin: const EdgeInsets.only(right: 5.0, bottom: 10.0),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.red,
+              color: Colors.white,
             ),
           ),
           onTap: () {
-            print('object');
             if (onPageChanged != null) onPageChanged!(0);
           },
         ),
@@ -35,7 +34,7 @@ class AstroPageIndicator extends StatelessWidget {
             margin: const EdgeInsets.only(right: 5.0, bottom: 10.0),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.red,
+              color: Colors.white,
             ),
           ),
           onTap: () {
@@ -49,7 +48,7 @@ class AstroPageIndicator extends StatelessWidget {
             margin: const EdgeInsets.only(right: 5.0, bottom: 10.0),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.red,
+              color: Colors.white,
             ),
           ),
           onTap: () {
@@ -63,7 +62,7 @@ class AstroPageIndicator extends StatelessWidget {
             margin: const EdgeInsets.only(right: 5.0, bottom: 10.0),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.red,
+              color: Colors.white,
             ),
           ),
           onTap: () {
@@ -77,7 +76,7 @@ class AstroPageIndicator extends StatelessWidget {
             margin: const EdgeInsets.only(right: 5.0, bottom: 10.0),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.red,
+              color: Colors.white,
             ),
           ),
           onTap: () {
@@ -91,7 +90,7 @@ class AstroPageIndicator extends StatelessWidget {
             margin: const EdgeInsets.only(right: 5.0, bottom: 10.0),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.red,
+              color: Colors.white,
             ),
           ),
           onTap: () {
@@ -105,7 +104,7 @@ class AstroPageIndicator extends StatelessWidget {
             margin: const EdgeInsets.only(right: 5.0, bottom: 10.0),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.red,
+              color: Colors.white,
             ),
           ),
           onTap: () {
@@ -119,7 +118,7 @@ class AstroPageIndicator extends StatelessWidget {
             margin: const EdgeInsets.only(right: 5.0, bottom: 10.0),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.red,
+              color: Colors.white,
             ),
           ),
           onTap: () {
@@ -133,7 +132,7 @@ class AstroPageIndicator extends StatelessWidget {
             margin: const EdgeInsets.only(right: 5.0, bottom: 10.0),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.red,
+              color: Colors.white,
             ),
           ),
           onTap: () {
@@ -147,7 +146,7 @@ class AstroPageIndicator extends StatelessWidget {
             margin: const EdgeInsets.only(right: 5.0, bottom: 10.0),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.red,
+              color: Colors.white,
             ),
           ),
           onTap: () {
