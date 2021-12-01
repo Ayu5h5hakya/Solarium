@@ -21,8 +21,8 @@ class SolarSystem extends StatefulWidget {
 }
 
 class _SolarSystemState extends State<SolarSystem> {
-  int _currentPlanet = 2;
-  final PageController _controller = PageController(initialPage: 2);
+  int _currentPlanet = 3;
+  final PageController _controller = PageController(initialPage: 3);
 
   @override
   void dispose() {
