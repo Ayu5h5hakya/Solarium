@@ -32,45 +32,15 @@ class BodyDetail extends StatelessWidget {
             builder: (_, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
                 if (snapshot.data != null) {
-                  SolarMember _details = snapshot.data!;
-                  return Column(
-                    children: [
-                      Text(
-                        _details.name.toUpperCase(),
-                        style: const TextStyle(
-                          fontSize: 40.0,
-                          color: Colors.white,
-                        ),
-                      ),
-                      BodySurfaceData(
-                        surfaceTemp: _details.tempInK,
-                        radius: _details.radInKm,
-                        body: path,
-                      ),
-                      path != sun_details
-                          ? InfoTile(
-                              //FITTEDBOX
-                              label: 'MOONS',
-                              body: MoonsGrid(
-                                data: _details.moons,
-                              ),
-                            )
-                          : const SizedBox(),
-                      InfoTile(
-                        //COLUMN-LISTVIEW -> LIMITEDBOX -> EXPANDED
-                        label: 'POP CULTURE',
-                        body: MovieLocationPageView(
-                          data: _details.mediaPresence,
-                        ),
-                      ),
-                      InfoTile(
-                        label: 'EVENTS',
-                        body: SolarEventsPageView(
-                          data: _details.events,
-                        ),
-                      ),
-                    ],
-                  );
+                  return OrientationBuilder(builder: (_, orientation) {
+                    if (orientation == Orientation.portrait) {
+                      return _DetailPortrait(
+                          path: path, member: snapshot.data!);
+                    } else {
+                      return _DetailLandscape(
+                          path: path, member: snapshot.data!);
+                    }
+                  });
                 }
               }
               return const Center(
@@ -78,6 +48,121 @@ class BodyDetail extends StatelessWidget {
               );
             }),
       ),
+    );
+  }
+}
+
+class _DetailPortrait extends StatelessWidget {
+  final String path;
+  final SolarMember member;
+  const _DetailPortrait({Key? key, required this.path, required this.member})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const SizedBox(
+          height: 10.0,
+        ),
+        Text(
+          member.name.toUpperCase(),
+          style: const TextStyle(
+            fontSize: 40.0,
+            color: Colors.white,
+          ),
+        ),
+        BodySurfaceData(
+          surfaceTemp: member.tempInK,
+          radius: member.radInKm,
+          body: path,
+        ),
+        path != sun_details
+            ? InfoTile(
+                //FITTEDBOX
+                label: 'MOONS',
+                body: MoonsGrid(
+                  data: member.moons,
+                ),
+              )
+            : const SizedBox(),
+        InfoTile(
+          //COLUMN-LISTVIEW -> LIMITEDBOX -> EXPANDED
+          label: 'POP CULTURE',
+          body: MovieLocationPageView(
+            data: member.mediaPresence,
+          ),
+        ),
+        InfoTile(
+          label: 'EVENTS',
+          body: SolarEventsPageView(
+            data: member.events,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _DetailLandscape extends StatelessWidget {
+  final String path;
+  final SolarMember member;
+  const _DetailLandscape({Key? key, required this.path, required this.member})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Column(
+          children: [
+            const SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              member.name.toUpperCase(),
+              style: const TextStyle(
+                fontSize: 40.0,
+                color: Colors.white,
+              ),
+            ),
+            BodySurfaceData(
+              surfaceTemp: member.tempInK,
+              radius: member.radInKm,
+              body: path,
+            ),
+          ],
+        ),
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              path != sun_details
+                  ? InfoTile(
+                      //FITTEDBOX
+                      label: 'MOONS',
+                      body: MoonsGrid(
+                        data: member.moons,
+                      ),
+                    )
+                  : const SizedBox(),
+              InfoTile(
+                //COLUMN-LISTVIEW -> LIMITEDBOX -> EXPANDED
+                label: 'POP CULTURE',
+                body: MovieLocationPageView(
+                  data: member.mediaPresence,
+                ),
+              ),
+              InfoTile(
+                label: 'EVENTS',
+                body: SolarEventsPageView(
+                  data: member.events,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

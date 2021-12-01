@@ -20,13 +20,6 @@ class MovieLocationPageView extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Image.network(
-                    _item.imageUrl,
-                    height: 120.0,
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,6 +36,10 @@ class MovieLocationPageView extends StatelessWidget {
                         ),
                       ],
                     ),
+                  ),
+                  Image.network(
+                    _item.imageUrl,
+                    height: 120.0,
                   ),
                 ],
               ),

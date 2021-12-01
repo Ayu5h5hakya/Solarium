@@ -1,7 +1,7 @@
 {
     "name": "Earth",
-    "tempInK": 755,
-    "radInKm": 6052,
+    "tempInK": 288,
+    "radInKm": 6371,
     "moons": [
         {
             "name": "Moon",
@@ -39,19 +39,19 @@
     ],
     "event": [
         {
-            "launchDate": "February 18, 1930",
+            "launchDate": "Oct 4, 1957",
             "name": "Sputnik",
-            "description": "Clyde Tombaugh took many photographs of the region of the sky where Lowell had predicted Planet X would be. He compared photos taken days apart by using a blink comparator, which superimposed the images of the two plates and blinked rapidly between them. After less than a year of searching, Tombaugh found Pluto on two plates taken in January 1930."
+            "description": "Sputnik 1 was the first artificial Earth satellite. It was launched into an elliptical low Earth orbit by the USSR on 4 October 1957 as part of the Soviet space program. It orbited for three weeks before its batteries died and then orbited silently for two months before it fell back into the atmosphere on 4 January 1958."
         },
         {
-            "launchDate": "August 24, 2006",
-            "name": "Neil Armstrong",
-            "description": "Beginning in the 1990s, its status as a planet was questioned following the discovery of several objects of similar size in the Kuiper belt and the scattered disc, including the dwarf planet Eris. This led the International Astronomical Union (IAU) in 2006 to formally define the term \"planet\"—excluding Pluto and reclassifying it as a dwarf planet. "
+            "launchDate": "July 20, 1969",
+            "name": "Moon Landing",
+            "description": "On July 20, 1969, Armstrong and Apollo 11 Lunar Module (LM) pilot Buzz Aldrin became the first people to land on the Moon, and the next day they spent two and a half hours outside the Lunar Module Eagle spacecraft while Michael Collins remained in lunar orbit in the Apollo Command Module Columbia. When Armstrong first stepped onto the lunar surface, he famously said: \"That's one small step for man, one giant leap for mankind.\""
         },
         {
-            "launchDate": "February 7, 1979",
+            "launchDate": "Feb 1, 1958",
             "name": "Explorer 1",
-            "description": "Pluto’s orbit has a higher eccentricity than the other planets’ orbits. A circle has an eccentricity of 0. Pluto, however, has an eccentricity of 0.251, which means that its orbit crosses that of Neptune, making that planet farther from the Sun from February 7, 1979, until February 11, 1999."
+            "description": "Explorer 1 was the first satellite launched by the United States and was part of the U.S. participation in the International Geophysical Year (IGY). The mission followed the first two satellites the previous year; the Soviet Union's Sputnik 1 and Sputnik 2, beginning the Cold War Space Race between the two nations. "
         }
     ]
 }

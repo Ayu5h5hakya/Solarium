@@ -2,7 +2,24 @@
     "name": "Jupiter",
     "tempInK": 755,
     "radInKm": 6052,
-    "moons": [],
+    "moons": [
+        {
+            "name": "Io",
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReULf060q2AOj7oZj_57zl4iarMqI3gM1-IA&usqp=CAU"
+        },
+        {
+            "name": "Europa",
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-uyh-0yaiBdPyW9rSFQgvW4vR4ccLe3j9lw&usqp=CAU"
+        },
+        {
+            "name": "Ganymede",
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN99tCgRCGXzv5TXFxhtMF335VbJigukU3ow&usqp=CAU"
+        },
+        {
+            "name": "Calisto",
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDt-J32-l99okNN7MvoaLpSCxnd82HWZEP2w&usqp=CAU"
+        }
+    ],
     "popculture": [
         {
             "name": "2001: A Space Odyssey",
