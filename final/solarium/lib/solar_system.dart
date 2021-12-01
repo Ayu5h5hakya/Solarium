@@ -37,7 +37,7 @@ class _SolarSystemState extends State<SolarSystem> {
         PageView(
           controller: _controller,
           scrollDirection: Axis.vertical,
-          children: [
+          children: const [
             _ProportionedBody(
               path: sun_details,
               body: Sun(
