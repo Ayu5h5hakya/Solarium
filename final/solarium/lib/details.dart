@@ -1,3 +1,4 @@
+import 'package:solarium/constants.dart';
 import 'package:solarium/widgets/body_surface_data.dart';
 import 'package:solarium/widgets/moons_grid.dart';
 import 'package:solarium/widgets/movie_location_pageview.dart';
@@ -42,24 +43,31 @@ class BodyDetail extends StatelessWidget {
                         ),
                       ),
                       BodySurfaceData(
-                        //SIZEDOVERFLOWBOX/CONSTRAINEDBOX
                         surfaceTemp: _details.tempInK,
                         radius: _details.radInKm,
                         body: path,
                       ),
-                      const InfoTile(
-                        //FITTEDBOX
-                        label: 'MOONS',
-                        body: MoonsGrid(),
-                      ),
-                      const InfoTile(
+                      path != sun_details
+                          ? InfoTile(
+                              //FITTEDBOX
+                              label: 'MOONS',
+                              body: MoonsGrid(
+                                data: _details.moons,
+                              ),
+                            )
+                          : const SizedBox(),
+                      InfoTile(
                         //COLUMN-LISTVIEW -> LIMITEDBOX -> EXPANDED
                         label: 'POP CULTURE',
-                        body: MovieLocationPageView(),
+                        body: MovieLocationPageView(
+                          data: _details.mediaPresence,
+                        ),
                       ),
                       const InfoTile(
                         label: 'EVENTS',
-                        body: SolarEventsPageView(),
+                        body: SolarEventsPageView(
+                            //data: _details.events,
+                            ),
                       ),
                     ],
                   );
