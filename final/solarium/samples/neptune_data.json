@@ -55,12 +55,12 @@
     ],
     "event": [
         {
-            "launchDate": "February 18, 1930",
+            "launchDate": "Feb 18, 1930",
             "name": "4 new moons",
             "description": "Clyde Tombaugh took many photographs of the region of the sky where Lowell had predicted Planet X would be. He compared photos taken days apart by using a blink comparator, which superimposed the images of the two plates and blinked rapidly between them. After less than a year of searching, Tombaugh found Pluto on two plates taken in January 1930."
         },
         {
-            "launchDate": "February 7, 1979",
+            "launchDate": "Feb 7, 1979",
             "name": "Crossing Neptune's Orbit",
             "description": "Pluto’s orbit has a higher eccentricity than the other planets’ orbits. A circle has an eccentricity of 0. Pluto, however, has an eccentricity of 0.251, which means that its orbit crosses that of Neptune, making that planet farther from the Sun from February 7, 1979, until February 11, 1999."
         }
