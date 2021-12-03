@@ -1,4 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-com/raywenderlich/solarium/BuildConfig.java
- com.raywenderlich.solarium.BuildConfig
