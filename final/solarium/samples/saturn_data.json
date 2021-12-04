@@ -55,19 +55,19 @@
     ],
     "event": [
         {
-            "launchDate": "April 24, 1990",
-            "name": "Hubble Space Telescope",
-            "description": "Clyde Tombaugh took many photographs of the region of the sky where Lowell had predicted Planet X would be. He compared photos taken days apart by using a blink comparator, which superimposed the images of the two plates and blinked rapidly between them. After less than a year of searching, Tombaugh found Pluto on two plates taken in January 1930."
+            "launchDate": "Jan 14, 2005",
+            "name": "Hyugens",
+            "description": "The European Space Agency's Huygens probe is the first spacecraft to make a soft landing on the surface of another planet's moon — Saturn's giant moon Titan. The probe provides the first direct study of Titan's atmosphere and the first-and-only direct images of Titan's surface."
         },
         {
-            "launchDate": "September 5, 1977",
-            "name": "Voyager 1",
-            "description": "Beginning in the 1990s, its status as a planet was questioned following the discovery of several objects of similar size in the Kuiper belt and the scattered disc, including the dwarf planet Eris. This led the International Astronomical Union (IAU) in 2006 to formally define the term \"planet\"—excluding Pluto and reclassifying it as a dwarf planet. "
+            "launchDate": "Jul 1, 2004",
+            "name": "Casinni",
+            "description": "NASA's Cassini spacecraft becomes the first to orbit Saturn, beginning a decade-long mission that revealed many secrets and surprises about Saturn and its system of rings and moons. Cassini ended a 13-year orbital mission in 2017 with a spectacular, planned plunge into Saturn’s atmosphere — sending science data back to the last second."
         },
         {
-            "launchDate": "October 15, 1997",
-            "name": "Cassini",
-            "description": "Pluto’s orbit has a higher eccentricity than the other planets’ orbits. A circle has an eccentricity of 0. Pluto, however, has an eccentricity of 0.251, which means that its orbit crosses that of Neptune, making that planet farther from the Sun from February 7, 1979, until February 11, 1999."
+            "launchDate": "Apr 6, 1973",
+            "name": "Pioneer 11",
+            "description": "Pioneer 11, the sister spacecraft to Pioneer 10, was the first human-made object to fly past Saturn and also returned the first pictures of the polar regions of Jupiter. Among Pioneer 11's many discoveries are Saturn's F ring and a new moon."
         }
     ]
 }
